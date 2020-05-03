@@ -25,13 +25,14 @@ p_num2 = int(input("Write second value here: "))
 product = p_num1*p_num2
 product_of_num = print("The product of", p_num1, "and", p_num2, "is", product)
 
-# program to determine the minimum number of pizzas to order (pizza size 6 slices)
+# program to determine the minimum number of pizzas to order (pizza size 8 slices)
 
+import math
+pizza_size = 8
 num_people = int(input("Enter number of people ordering pizza: "))
 num_slices = int(input("Now enter the number of slices each person will have: "))
 total_slices = num_people * num_slices
-pizza_size = 8
-num_pizzas = total_slices//pizza_size
-remainder_slices = (num_pizzas*(pizza_size)-total_slices)
+num_pizzas = math.ceil(total_slices/pizza_size)
+remainder_slices = ((pizza_size*num_pizzas)%total_slices)
 print("You will need a minimum of", abs(num_pizzas), "of pizzas.",
       "There will be", remainder_slices, "slices left.")
